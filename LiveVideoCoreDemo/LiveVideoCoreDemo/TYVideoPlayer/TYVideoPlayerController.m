@@ -23,7 +23,7 @@
 // 播放视图层
 @property (nonatomic, weak) TYVideoPlayerView *playerView;
 // 播放控制层
-@property (nonatomic, weak) TYVideoControlView *controlView;
+//@property (nonatomic, weak) TYVideoControlView *controlView;
 // 播放loading
 @property (nonatomic, weak) TYLoadingView *loadingView;
 // 播放错误view
@@ -56,7 +56,7 @@
 {
     _shouldAutoplayVideo = YES;
     _failedToAutoRetryCount = 2;
-    _videoGravity = AVLayerVideoGravityResizeAspect;
+//    _videoGravity = AVLayerVideoGravityResizeAspect;
 }
 
 #pragma mark - life cycle
@@ -86,8 +86,8 @@
     
     _playerView.frame = self.view.bounds;
     _loadingView.center = _playerView.center;
-    _controlView.frame = self.view.bounds;
-    [_controlView setFullScreen:self.isFullScreen];
+//    _controlView.frame = self.view.bounds;
+//    [_controlView setFullScreen:self.isFullScreen];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -114,7 +114,7 @@
 {
     TYVideoPlayerView *playerView = [[TYVideoPlayerView alloc]init];
     playerView.backgroundColor = [UIColor blackColor];
-    playerView.playerLayer.videoGravity = _videoGravity;
+//    playerView.playerLayer.videoGravity = _videoGravity;
     [self.view addSubview:playerView];
     _playerView = playerView;
 }
@@ -125,7 +125,7 @@
     [controlView setTitle:_videoTitle];
     controlView.delegate = self;
     [self.view addSubview:controlView];
-    _controlView = controlView;
+//    _controlView = controlView;
 }
 
 - (void)addLoadingView
@@ -139,7 +139,7 @@
 - (void)addSingleTapGesture
 {
     UITapGestureRecognizer *hideTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTapAction:)];
-    [_controlView addGestureRecognizer:hideTap];
+//    [_controlView addGestureRecognizer:hideTap];
 }
 
 #pragma mark - getter
@@ -151,7 +151,7 @@
 
 - (void)setVideoGravity:(NSString *)videoGravity
 {
-    _videoGravity = videoGravity;
+//    _videoGravity = videoGravity;
     
     if (_playerView) {
         _playerView.playerLayer.videoGravity = videoGravity;
@@ -211,7 +211,7 @@
 - (void)showLoadingView
 {
     if (!_loadingView.isAnimating && _videoPlayer.track.videoType != TYVideoPlayerTrackLocal) {
-        [_controlView setPlayBtnHidden:YES];
+//        [_controlView setPlayBtnHidden:YES];
         [_loadingView startAnimation];
     }
 }
@@ -219,7 +219,7 @@
 - (void)stopLoadingView
 {
     if (_loadingView.isAnimating) {
-        [_controlView setPlayBtnHidden:NO];
+//        [_controlView setPlayBtnHidden:NO];
         [_loadingView stopAnimation];
     }
 }
@@ -236,7 +236,7 @@
     }else {
         [self setControlViewHidden:NO];
     }
-    [_controlView setPlayBtnHidden:[_loadingView isAnimating]];
+//    [_controlView setPlayBtnHidden:[_loadingView isAnimating]];
 }
 
 - (void)hideControlViewWithAnimation:(BOOL)animation
@@ -254,13 +254,14 @@
 
 - (void)setControlViewHidden:(BOOL)hidden
 {
-    [_controlView setContentViewHidden:hidden];
+//    [_controlView setContentViewHidden:hidden];
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (BOOL)isControlViewHidden
 {
-    return [_controlView contentViewHidden];
+//    return [_controlView contentViewHidden];
+    return YES;
 }
 
 - (void)hideControlViewWithDelay:(CGFloat)delay
@@ -335,19 +336,19 @@
             if (_shouldAutoplayVideo) {
                 [self hideControlViewWithAnimation:NO];
             }
-            [_controlView setSliderProgress:0];
-            [_controlView setBufferProgress:0];
-            [_controlView setCurrentVideoTime:@"00:00"];
-            [_controlView setTotalVideoTime:@"00:00"];
+//            [_controlView setSliderProgress:0];
+//            [_controlView setBufferProgress:0];
+//            [_controlView setCurrentVideoTime:@"00:00"];
+//            [_controlView setTotalVideoTime:@"00:00"];
             break;
         case TYVideoPlayerStateContentReadyToPlay:
         {
             NSString *totalTime = [self covertToStringWithTime:[_videoPlayer duration]];
             NSString *currentTime = [self covertToStringWithTime:[_videoPlayer currentTime]];
-            [_controlView setTotalVideoTime:totalTime];
-            [_controlView setCurrentVideoTime:currentTime];
-            [_controlView setSliderProgress:[_videoPlayer currentTime]/[_videoPlayer duration]];
-            [_controlView setTimeSliderHidden:_videoPlayer.track.videoType == TYVideoPlayerTrackLIVE];
+//            [_controlView setTotalVideoTime:totalTime];
+//            [_controlView setCurrentVideoTime:currentTime];
+//            [_controlView setSliderProgress:[_videoPlayer currentTime]/[_videoPlayer duration]];
+//            [_controlView setTimeSliderHidden:_videoPlayer.track.videoType == TYVideoPlayerTrackLIVE];
             if (_shouldAutoplayVideo) {
                 [self hideControlViewWithDelay:5.0];
             }else {
@@ -357,12 +358,12 @@
         }
         case TYVideoPlayerStateContentPlaying:
             [self hideErrorView];
-            [_controlView setPlayBtnState:NO];
-            [_controlView setPlayBtnHidden:NO];
+//            [_controlView setPlayBtnState:NO];
+//            [_controlView setPlayBtnHidden:NO];
             [self stopLoadingView];
             break;
         case TYVideoPlayerStateContentPaused:
-            [_controlView setPlayBtnState:YES];
+//            [_controlView setPlayBtnState:YES];
             break;
         case TYVideoPlayerStateSeeking:
             [self showLoadingView];
@@ -372,11 +373,11 @@
             break;
         case TYVideoPlayerStateStopped:
             [self stopLoadingView];
-            [_controlView setPlayBtnHidden:YES];
+//            [_controlView setPlayBtnHidden:YES];
             break;
         case TYVideoPlayerStateError:
             [self stopLoadingView];
-            [_controlView setPlayBtnHidden:YES];
+//            [_controlView setPlayBtnHidden:YES];
             break;
         default:
             break;
@@ -495,15 +496,15 @@
     }
     
     NSString *time = [self covertToStringWithTime:playTime];
-    [_controlView setCurrentVideoTime:time];
+//    [_controlView setCurrentVideoTime:time];
     NSTimeInterval duration = [videoPlayer duration];
     NSTimeInterval availableDuration = [videoPlayer availableDuration];
     if (duration <= 0) {
-        [_controlView setSliderProgress:0];
-        [_controlView setBufferProgress:0];
+//        [_controlView setSliderProgress:0];
+//        [_controlView setBufferProgress:0];
     }else {
-        [_controlView setSliderProgress:playTime/duration];
-        [_controlView setBufferProgress:MIN(availableDuration/duration, 1.0)];
+//        [_controlView setSliderProgress:playTime/duration];
+//        [_controlView setBufferProgress:MIN(availableDuration/duration, 1.0)];
     }
 }
 
@@ -512,7 +513,7 @@
 {
     NSLog(@"播放完成！");
     
-    [_controlView setPlayBtnHidden:YES];
+//    [_controlView setPlayBtnHidden:YES];
     
     __weak typeof(self) weakSelf = self;
     [self showErrorViewWithTitle:@"重播" actionHandle:^{
@@ -533,7 +534,7 @@
         return;
     }
     [_loadingView stopAnimation];
-    [_controlView setPlayBtnHidden:YES];
+//    [_controlView setPlayBtnHidden:YES];
     
     __weak typeof(self) weakSelf = self;
     [self showErrorViewWithTitle:@"视频播放失败,重试" actionHandle:^{
@@ -550,7 +551,7 @@
         return;
     }
     [_loadingView stopAnimation];
-    [_controlView setPlayBtnHidden:YES];
+//    [_controlView setPlayBtnHidden:YES];
     
     __weak typeof(self) weakSelf = self;
     [self showErrorViewWithTitle:@"视频播放超时,重试" actionHandle:^{
@@ -609,7 +610,7 @@
         {
             NSTimeInterval sliderTime = floor([_videoPlayer duration]*progress);
             NSString *time = [self covertToStringWithTime:sliderTime];
-            [_controlView setCurrentVideoTime:time];
+//            [_controlView setCurrentVideoTime:time];
             break;
         }
         case TYSliderStateEnd:
@@ -618,7 +619,7 @@
             NSTimeInterval sliderTime = floor([_videoPlayer duration]*progress);
             NSString *time = [self covertToStringWithTime:sliderTime];
             [_videoPlayer seekToTime:sliderTime];
-            [_controlView setCurrentVideoTime:time];
+//            [_controlView setCurrentVideoTime:time];
             [self hideControlViewWithAnimation:YES];
             break;
         }

@@ -39,11 +39,11 @@
         
         [self addContentView];
         
-        [self addTitleView];
+//        [self addTitleView];
         
-        [self addBottomView];
+//        [self addBottomView];
         
-        [self addSuspendButton];
+//        [self addSuspendButton];
     }
     return self;
 }
@@ -54,11 +54,11 @@
         
         [self addContentView];
         
-        [self addTitleView];
+//        [self addTitleView];
         
-        [self addBottomView];
+//        [self addBottomView];
         
-        [self addSuspendButton];
+//        [self addSuspendButton];
     }
     return self;
 }
