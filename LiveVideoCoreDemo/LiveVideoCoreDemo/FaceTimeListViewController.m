@@ -69,16 +69,14 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    FiceTimeViewController *faceVC = [story instantiateViewControllerWithIdentifier:@"FiceTimeViewController"];
-    
+//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    FiceTimeViewController *faceVC = [story instantiateViewControllerWithIdentifier:@"FiceTimeViewController"];
 //    [self.navigationController pushViewController:faceVC animated:YES];
     
     LiveShowViewController *liveVC = [[LiveShowViewController alloc] init];
     liveVC.RtmpUrl = [NSURL URLWithString:@"rtmp://ossrs.net/live/123456"];
     liveVC.IsHorizontal = NO;
-    [self.navigationController pushViewController:liveVC animated:YES];
+    [self presentViewController:liveVC animated:YES completion:nil];
     
 }
 

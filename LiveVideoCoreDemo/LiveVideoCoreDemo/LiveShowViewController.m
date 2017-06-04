@@ -61,7 +61,7 @@
     _RtmpStatusLabel.layer.cornerRadius  = 5;
     _RtmpStatusLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:10];
     [_RtmpStatusLabel setTextColor:[UIColor whiteColor]];
-    _RtmpStatusLabel.text = @"RTMP状态: 未连接";
+    _RtmpStatusLabel.text = @"网络状态: 未连接";
     [self.view addSubview:_RtmpStatusLabel];
     
     float fFilterButtonW = 50;
@@ -307,7 +307,7 @@
     UIApplication *app = [UIApplication sharedApplication];
     
     //一个后台任务标识符
-    UIBackgroundTaskIdentifier taskID;
+    UIBackgroundTaskIdentifier taskID = 0;
     taskID = [app beginBackgroundTaskWithExpirationHandler:^{
         //如果系统觉得我们还是运行了太久，将执行这个程序块，并停止运行应用程序
         [app endBackgroundTask:taskID];
@@ -350,22 +350,92 @@
 
 //rtmp status delegate:
 - (void) LiveConnectionStatusChanged: (LIVE_VCSessionState) sessionState{
+    
+    _RtmpStatusLabel.alpha = 0.1;
+    [UIView animateWithDuration:1.0 animations:^{
+       
+        _RtmpStatusLabel.alpha = 1.0;
+        
+    } completion:^(BOOL finished) {
+        
+        
+    }];
+    _RtmpStatusLabel.hidden = NO;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         switch (sessionState) {
             case LIVE_VCSessionStatePreviewStarted:
-                _RtmpStatusLabel.text = @"RTMP状态: 预览未连接";
+                
+            {
+                
+                _RtmpStatusLabel.text = @"网络状态: 预览未连接";
+
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                    _RtmpStatusLabel.alpha = 0.0;
+                    
+                } completion:^(BOOL finished) {
+                    
+                }];
+                
+            }
+                
                 break;
             case LIVE_VCSessionStateStarting:
-                _RtmpStatusLabel.text = @"RTMP状态: 连接中...";
+                
+            {
+                _RtmpStatusLabel.text = @"网络状态: 连接中...";
+                
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                    _RtmpStatusLabel.alpha = 0.0;
+                    
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
                 break;
             case LIVE_VCSessionStateStarted:
-                _RtmpStatusLabel.text = @"RTMP状态: 已连接";
+                
+            {
+                _RtmpStatusLabel.text = @"网络状态: 已连接";
+                
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                    _RtmpStatusLabel.alpha = 0.0;
+                    
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
                 break;
             case LIVE_VCSessionStateEnded:
-                _RtmpStatusLabel.text = @"RTMP状态: 未连接";
+            
+            {
+                _RtmpStatusLabel.text = @"网络状态: 未连接";
+                
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                    _RtmpStatusLabel.alpha = 0.0;
+                    
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
                 break;
             case LIVE_VCSessionStateError:
-                _RtmpStatusLabel.text = @"RTMP状态: 错误";
+            
+            {
+                _RtmpStatusLabel.text = @"网络状态: 错误";
+             
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                    _RtmpStatusLabel.alpha = 0.0;
+                    
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
                 break;
             default:
                 break;
