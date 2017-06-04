@@ -122,6 +122,18 @@
            
             [_videoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
             
+            //隐藏屏幕上的所有控件
+            _nameLabel.alpha = 0.0;
+            _faceTimeLabel.alpha = 0.0;
+            _MicSlider.alpha = 0.0;
+            _CameraChangeButton.alpha = 0.0;
+            _FilterButton.alpha = 0.0;
+            _ExitButton.alpha = 0.0;
+            
+            
+            
+            
+            
         } completion:^(BOOL finished) {
             
             
@@ -135,6 +147,16 @@
         [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             [_videoView setFrame:_videoFrame];
+            
+            //显示屏幕上的所有控件
+            
+            _nameLabel.alpha = 1.0;
+            _faceTimeLabel.alpha = 1.0;
+            _MicSlider.alpha = 1.0;
+            _CameraChangeButton.alpha = 1.0;
+            _FilterButton.alpha = 1.0;
+            _ExitButton.alpha = 1.0;
+            
             
         } completion:^(BOOL finished) {
             
