@@ -90,7 +90,7 @@
     
     [self UIInit];
     
-    _RtmpUrlTextField.text = @"rtmp://ossrs.net/live/123458";
+    _RtmpUrlTextField.text = @"rtmp://ossrs.net/live/123456";
 }
 
 - (void)didReceiveMemoryWarning {
