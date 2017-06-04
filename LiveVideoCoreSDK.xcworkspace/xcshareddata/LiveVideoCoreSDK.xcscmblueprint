@@ -1,28 +1,23 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++A52D4A8",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D1710B4522FBD399346846A17EF5567A1BB1B736+++A52D4A8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++D341EDD" : 0,
     "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++E3C94D0" : 0,
-    "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++A52D4A8" : 0
+    "D1710B4522FBD399346846A17EF5567A1BB1B736+++A52D4A8" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "11CFA609-AC5C-4221-85FA-04D2960C9527",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++D341EDD" : "..",
     "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++E3C94D0" : "..",
-    "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++A52D4A8" : "LiveVideoCoreSDK\/"
+    "D1710B4522FBD399346846A17EF5567A1BB1B736+++A52D4A8" : "LiveVideoCoreSDK\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LiveVideoCoreSDK",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LiveVideoCoreSDK.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/runner365\/LiveVideoCoreSDK.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++A52D4A8"
-    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/runner365\/LiveVideoCoreSDK.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
@@ -32,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/runner365\/AudioMix.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0CE6276335B519201392AE507EA12B2DF9FF0EAC+++E3C94D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/runner365\/LiveVideoCoreSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D1710B4522FBD399346846A17EF5567A1BB1B736+++A52D4A8"
     }
   ]
 }

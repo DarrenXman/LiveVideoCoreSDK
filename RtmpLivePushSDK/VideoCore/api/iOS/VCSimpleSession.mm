@@ -694,6 +694,8 @@ namespace videocore { namespace simpleApi {
             case VCFilterAntique:
                 filterName = @"com.videocore.filters.antique";
                 break;
+            case VCFilterDarren0:
+                filterName = @"";
             default:
                 break;
         }

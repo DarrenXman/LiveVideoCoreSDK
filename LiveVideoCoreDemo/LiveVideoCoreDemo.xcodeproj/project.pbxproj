@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040152121EE3919C0050BFD7 /* FaceCamViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401520D1EE3919C0050BFD7 /* FaceCamViewer.m */; };
+		040152131EE3919C0050BFD7 /* FaceTimeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401520F1EE3919C0050BFD7 /* FaceTimeListViewController.m */; };
+		040152141EE3919C0050BFD7 /* FiceTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152111EE3919C0050BFD7 /* FiceTimeViewController.m */; };
+		0457B5BB1E6555EF0061A7A2 /* TESTLiveShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457B5BA1E6555EF0061A7A2 /* TESTLiveShowViewController.m */; };
 		B73752F01CAA5630007FBCA0 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752ED1CAA5630007FBCA0 /* ASValuePopUpView.m */; };
 		B73752F11CAA5630007FBCA0 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752EF1CAA5630007FBCA0 /* ASValueTrackingSlider.m */; };
 		B73752F51CAA8688007FBCA0 /* ZJSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752F41CAA8688007FBCA0 /* ZJSwitch.m */; };
@@ -50,6 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0401520C1EE3919C0050BFD7 /* FaceCamViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceCamViewer.h; sourceTree = "<group>"; };
+		0401520D1EE3919C0050BFD7 /* FaceCamViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceCamViewer.m; sourceTree = "<group>"; };
+		0401520E1EE3919C0050BFD7 /* FaceTimeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceTimeListViewController.h; sourceTree = "<group>"; };
+		0401520F1EE3919C0050BFD7 /* FaceTimeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceTimeListViewController.m; sourceTree = "<group>"; };
+		040152101EE3919C0050BFD7 /* FiceTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiceTimeViewController.h; sourceTree = "<group>"; };
+		040152111EE3919C0050BFD7 /* FiceTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiceTimeViewController.m; sourceTree = "<group>"; };
+		0457B5B91E6555EF0061A7A2 /* TESTLiveShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTLiveShowViewController.h; sourceTree = "<group>"; };
+		0457B5BA1E6555EF0061A7A2 /* TESTLiveShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTLiveShowViewController.m; sourceTree = "<group>"; };
 		B73752EC1CAA5630007FBCA0 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		B73752ED1CAA5630007FBCA0 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		B73752EE1CAA5630007FBCA0 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
@@ -175,8 +187,16 @@
 				B78280161C86C95E0057E507 /* AppDelegate.m */,
 				B78280181C86C95E0057E507 /* ViewController.h */,
 				B78280191C86C95E0057E507 /* ViewController.m */,
+				0401520C1EE3919C0050BFD7 /* FaceCamViewer.h */,
+				0401520D1EE3919C0050BFD7 /* FaceCamViewer.m */,
+				0401520E1EE3919C0050BFD7 /* FaceTimeListViewController.h */,
+				0401520F1EE3919C0050BFD7 /* FaceTimeListViewController.m */,
+				040152101EE3919C0050BFD7 /* FiceTimeViewController.h */,
+				040152111EE3919C0050BFD7 /* FiceTimeViewController.m */,
 				B78280451C86CA160057E507 /* LiveShowViewController.h */,
 				B78280461C86CA160057E507 /* LiveShowViewController.m */,
+				0457B5B91E6555EF0061A7A2 /* TESTLiveShowViewController.h */,
+				0457B5BA1E6555EF0061A7A2 /* TESTLiveShowViewController.m */,
 				B782801B1C86C95E0057E507 /* Main.storyboard */,
 				B782801E1C86C95E0057E507 /* Assets.xcassets */,
 				B78280201C86C95E0057E507 /* LaunchScreen.storyboard */,
@@ -307,6 +327,7 @@
 				TargetAttributes = {
 					B782800E1C86C95E0057E507 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = C953ZHHU6Y;
 					};
 					B78280271C86C95E0057E507 = {
 						CreatedOnToolsVersion = 7.2;
@@ -371,11 +392,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B782806C1C86E7F90057E507 /* XMNShareView.m in Sources */,
+				040152121EE3919C0050BFD7 /* FaceCamViewer.m in Sources */,
 				B73752F11CAA5630007FBCA0 /* ASValueTrackingSlider.m in Sources */,
+				040152141EE3919C0050BFD7 /* FiceTimeViewController.m in Sources */,
 				B782801A1C86C95E0057E507 /* ViewController.m in Sources */,
+				0457B5BB1E6555EF0061A7A2 /* TESTLiveShowViewController.m in Sources */,
 				B78280171C86C95E0057E507 /* AppDelegate.m in Sources */,
 				B782806B1C86E7F90057E507 /* XMNShareScrollView.m in Sources */,
 				B73752F51CAA8688007FBCA0 /* ZJSwitch.m in Sources */,
+				040152131EE3919C0050BFD7 /* FaceTimeListViewController.m in Sources */,
 				B73752F01CAA5630007FBCA0 /* ASValuePopUpView.m in Sources */,
 				B78280141C86C95E0057E507 /* main.m in Sources */,
 				B78280471C86CA160057E507 /* LiveShowViewController.m in Sources */,
@@ -518,12 +543,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = C953ZHHU6Y;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					../LiveVideoCoreSDK,
 					../Pods/VideoCore/api/IOS,
 				);
 				INFOPLIST_FILE = LiveVideoCoreDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.live.videocore.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,12 +562,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = C953ZHHU6Y;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					../LiveVideoCoreSDK,
 					../Pods/VideoCore/api/IOS,
 				);
 				INFOPLIST_FILE = LiveVideoCoreDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.live.videocore.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

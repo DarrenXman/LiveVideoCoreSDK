@@ -130,7 +130,7 @@
         }else{
             videosize = LIVE_VIEDO_SIZE_D1;
         }
-        [[LiveVideoCoreSDK sharedinstance] LiveInit:RtmpUrl Preview:_AllBackGroudView VideSize:videosize BitRate:LIVE_BITRATE_800Kbps FrameRate:LIVE_VIDEO_DEF_FRAMERATE highQuality:true];
+        [[LiveVideoCoreSDK sharedinstance] LiveInit:RtmpUrl Preview:_AllBackGroudView VideSize:videosize BitRate:LIVE_BITRATE_300Kbps FrameRate:LIVE_VIDEO_DEF_FRAMERATE highQuality:true];
         [LiveVideoCoreSDK sharedinstance].delegate = self;
         [[LiveVideoCoreSDK sharedinstance] connect];
         NSLog(@"Rtmp[%@] is connecting", self.RtmpUrl);
@@ -160,14 +160,26 @@
                             kXMNShareHighlightImage:@"original_Image",
                             kXMNShareTitle:@"原始"},
                           @{kXMNShareImage:@"beauty_Image",
-                          kXMNShareHighlightImage:@"beauty_Image",
-                          kXMNShareTitle:@"美颜"},
+                            kXMNShareHighlightImage:@"beauty_Image",
+                            kXMNShareTitle:@"美颜"},
                           @{kXMNShareImage:@"fugu_Image",
                             kXMNShareHighlightImage:@"fugu_Image",
                             kXMNShareTitle:@"复古"},
                           @{kXMNShareImage:@"black_Image",
                             kXMNShareHighlightImage:@"fugu_Image",
-                            kXMNShareTitle:@"黑白"},];
+                            kXMNShareTitle:@"黑白"},
+                          @{kXMNShareImage:@"beauty_Image",
+                            kXMNShareHighlightImage:@"beauty_Image",
+                            kXMNShareTitle:@"美颜0"},
+                          @{kXMNShareImage:@"beauty_Image",
+                            kXMNShareHighlightImage:@"beauty_Image",
+                            kXMNShareTitle:@"美颜1"},
+                          @{kXMNShareImage:@"beauty_Image",
+                            kXMNShareHighlightImage:@"beauty_Image",
+                            kXMNShareTitle:@"美颜2"},
+                          @{kXMNShareImage:@"beauty_Image",
+                            kXMNShareHighlightImage:@"beauty_Image",
+                            kXMNShareTitle:@"美颜3"}];
     //自定义头部
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 36)];
     headerView.backgroundColor = [UIColor clearColor];
@@ -201,6 +213,22 @@
             case 3://黑白
                 NSLog(@"设置黑白滤镜...");
                 [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_BLACK];
+                break;
+            case 4:
+                NSLog(@"设置美颜0滤镜...");
+                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE0];
+                break;
+            case 5:
+                NSLog(@"设置美颜1滤镜...");
+                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE1];
+                break;
+            case 6:
+                NSLog(@"设置美颜2滤镜...");
+                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE2];
+                break;
+            case 7:
+                NSLog(@"设置美颜3滤镜...");
+                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE3];
                 break;
             default:
                 break;

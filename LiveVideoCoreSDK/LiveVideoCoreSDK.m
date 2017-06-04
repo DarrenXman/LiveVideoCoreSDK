@@ -141,6 +141,22 @@
         case LIVE_FILTER_BLACK:
             [_livesession setFilter:VCFilterGray];
             break;
+        case LIVE_FILTER_DEFINE0:
+            [_livesession setFilter:VCFilterInvertColors];
+            break;
+        case LIVE_FILTER_DEFINE1:
+            [_livesession setFilter:VCFilterDarren0];
+            break;
+        case LIVE_FILTER_DEFINE2:
+            [_livesession setFilter:VCFilterDarren1];
+            break;
+        case LIVE_FILTER_DEFINE3:
+            [_livesession setFilter:VCFilterDarren2];
+            break;
+        case LIVE_FILTER_DEFINE4:
+            [_livesession setFilter:VCFilterDarren3];
+            break;
+            
         default:
             break;
     }
@@ -162,7 +178,7 @@
 
 //delegate operation
 - (void) connectionStatusChanged: (VCSessionState) sessionState{
-    NSLog(@"rtmp live state: %i", sessionState);
+    NSLog(@"rtmp live state: %li", (long)sessionState);
     LIVE_VCSessionState state = (LIVE_VCSessionState)sessionState;
     
     [self.delegate LiveConnectionStatusChanged:state];
