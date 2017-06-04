@@ -9,7 +9,7 @@
 #import "LiveShowViewController.h"
 #import "XMNShareMenu.h"
 
-@interface LiveShowViewController ()
+@interface LiveShowViewController ()<UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *FilterButton;
 
+@property (weak, nonatomic) IBOutlet UIView *videoView;
+
 @end
 
 
@@ -31,10 +33,10 @@
     
     XMNShareView* _FilterMenu;
     ASValueTrackingSlider* _MicSlider;
-    
     Boolean _bCameraFrontFlag;
-    
     UIView *_focusBox;
+    CGRect  _videoFrame;
+    
 }
 @synthesize RtmpUrl;
 
@@ -96,8 +98,51 @@
     _focusBox.layer.borderWidth = 5.0f;
     _focusBox.hidden = YES;
     [self.view addSubview:_focusBox];
+    
+    [self.view addSubview:_nameLabel];
+    [self.view addSubview:_faceTimeLabel];
+    
+    
+    UITapGestureRecognizer *videoViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(videoViewTap:)];
+    videoViewTap.delegate = self;
+    [_videoView addGestureRecognizer:videoViewTap];
+    _videoView.tag = 100;
+    _videoFrame = _videoView.frame;
+    _videoView.userInteractionEnabled = YES;
+    
+    [self.view addSubview:_videoView];
 }
 
+-(void) videoViewTap:(UITapGestureRecognizer *)tap {
+    
+    if (tap.view.tag == 100) {
+        tap.view.tag = 111;
+        
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+           
+            [_videoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+            
+        } completion:^(BOOL finished) {
+            
+            
+        }];
+        
+    }
+    else if (tap.view.tag == 111) {
+        
+        tap.view.tag = 100;
+        
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            [_videoView setFrame:_videoFrame];
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+    NSLog(@"videoViewTap");
+}
 -(void) RtmpInit{
     dispatch_async(dispatch_get_main_queue(), ^{
         CGSize videosize;

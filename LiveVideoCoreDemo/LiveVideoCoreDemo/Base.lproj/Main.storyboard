@@ -176,9 +176,18 @@
                                     <action selector="OnCameraChangeClicked:" destination="mgN-aU-prk" eventType="touchUpInside" id="X8w-bO-528"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4S-5H-JzY">
+                                <rect key="frame" x="249" y="125" width="110" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="TP7-Ll-Q9f"/>
+                                    <constraint firstAttribute="height" constant="160" id="cty-1U-1ZO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="l4S-5H-JzY" firstAttribute="top" secondItem="mwV-Fy-JI9" secondAttribute="bottom" constant="8" id="2ag-Av-ZQG"/>
                             <constraint firstItem="bYK-Nl-pVc" firstAttribute="top" secondItem="12X-72-aNE" secondAttribute="bottom" constant="20" id="FkN-cI-yye"/>
                             <constraint firstItem="K4K-oq-9V3" firstAttribute="leading" secondItem="12X-72-aNE" secondAttribute="trailing" constant="35" id="Fow-NL-Cha"/>
                             <constraint firstItem="12X-72-aNE" firstAttribute="leading" secondItem="Trr-Fv-SHb" secondAttribute="trailing" constant="35" id="GRk-wW-2l2"/>
@@ -187,6 +196,7 @@
                             <constraint firstItem="mwV-Fy-JI9" firstAttribute="centerX" secondItem="TnY-ZV-io8" secondAttribute="centerX" id="LBx-Oo-h0f"/>
                             <constraint firstItem="TnY-ZV-io8" firstAttribute="leading" secondItem="sPA-Ud-hQZ" secondAttribute="leading" constant="16" id="OLf-Ax-xSh"/>
                             <constraint firstItem="K4K-oq-9V3" firstAttribute="centerY" secondItem="Trr-Fv-SHb" secondAttribute="centerY" id="ciP-jC-BjJ"/>
+                            <constraint firstAttribute="trailing" secondItem="l4S-5H-JzY" secondAttribute="trailing" constant="16" id="dKg-eG-ZZ3"/>
                             <constraint firstItem="12X-72-aNE" firstAttribute="centerX" secondItem="mwV-Fy-JI9" secondAttribute="centerX" id="hFX-qM-O8T"/>
                             <constraint firstItem="12X-72-aNE" firstAttribute="centerY" secondItem="Trr-Fv-SHb" secondAttribute="centerY" id="hfK-2V-08X"/>
                             <constraint firstItem="mwV-Fy-JI9" firstAttribute="top" secondItem="TnY-ZV-io8" secondAttribute="bottom" constant="8" id="p3m-0m-pdp"/>
@@ -198,6 +208,7 @@
                         <outlet property="FilterButton" destination="K4K-oq-9V3" id="QCt-bH-GtZ"/>
                         <outlet property="faceTimeLabel" destination="mwV-Fy-JI9" id="pCO-VY-OIe"/>
                         <outlet property="nameLabel" destination="TnY-ZV-io8" id="ll9-b4-Bju"/>
+                        <outlet property="videoView" destination="l4S-5H-JzY" id="uq9-OE-Zix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gW-7e-L8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
