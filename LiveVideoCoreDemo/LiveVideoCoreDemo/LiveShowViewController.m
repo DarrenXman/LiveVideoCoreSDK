@@ -29,10 +29,6 @@
     UIView* _AllBackGroudView;
     UILabel*  _RtmpStatusLabel;
     
-//    UIButton* _ExitButton;
-//    UIButton* _FilterButton;
-//    UIButton* _CameraChangeButton;
-    
     XMNShareView* _FilterMenu;
     ASValueTrackingSlider* _MicSlider;
     
@@ -150,18 +146,6 @@
                           @{kXMNShareImage:@"black_Image",
                             kXMNShareHighlightImage:@"fugu_Image",
                             kXMNShareTitle:@"黑白"},
-//                          @{kXMNShareImage:@"beauty_Image",
-//                            kXMNShareHighlightImage:@"beauty_Image",
-//                            kXMNShareTitle:@"美颜0"},
-//                          @{kXMNShareImage:@"beauty_Image",
-//                            kXMNShareHighlightImage:@"beauty_Image",
-//                            kXMNShareTitle:@"美颜1"},
-//                          @{kXMNShareImage:@"beauty_Image",
-//                            kXMNShareHighlightImage:@"beauty_Image",
-//                            kXMNShareTitle:@"美颜2"},
-//                          @{kXMNShareImage:@"beauty_Image",
-//                            kXMNShareHighlightImage:@"beauty_Image",
-//                            kXMNShareTitle:@"美颜3"}
                           ];
     //自定义头部
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 36)];
@@ -197,22 +181,6 @@
                 NSLog(@"设置黑白滤镜...");
                 [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_BLACK];
                 break;
-//            case 4:
-//                NSLog(@"设置美颜0滤镜...");
-//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE0];
-//                break;
-//            case 5:
-//                NSLog(@"设置美颜1滤镜...");
-//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE1];
-//                break;
-//            case 6:
-//                NSLog(@"设置美颜2滤镜...");
-//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE2];
-//                break;
-//            case 7:
-//                NSLog(@"设置美颜3滤镜...");
-//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE3];
-//                break;
             default:
                 break;
         }
@@ -328,7 +296,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 //rtmp status delegate:

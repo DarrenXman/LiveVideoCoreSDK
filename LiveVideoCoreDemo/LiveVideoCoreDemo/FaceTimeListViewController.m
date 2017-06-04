@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) FaceCamViewer *viewer;
 
 @end
 
@@ -24,20 +25,28 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.tableView.alpha = 0.75;
+    self.tableView.backgroundColor = [UIColor blackColor];
+
     FaceCamViewer *viewer = [[FaceCamViewer alloc] initWithDeviceType:IPHONE3x5];
     [viewer startFaceCam];
-    
+    _viewer = viewer;
     [self.bgView insertSubview:viewer belowSubview:self.tableView];
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [_viewer removeFromSuperview];
+    _viewer = nil;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"FaceTimeList";
 
-    self.tableView.alpha = 0.75;
-    self.tableView.backgroundColor = [UIColor blackColor];
     
 }
 
