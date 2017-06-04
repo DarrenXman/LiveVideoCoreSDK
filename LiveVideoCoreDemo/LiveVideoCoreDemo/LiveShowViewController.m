@@ -9,13 +9,30 @@
 #import "LiveShowViewController.h"
 #import "XMNShareMenu.h"
 
+@interface LiveShowViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *faceTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *ExitButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *CameraChangeButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *FilterButton;
+
+@end
+
+
 @implementation LiveShowViewController
 {
     UIView* _AllBackGroudView;
-    UIButton* _ExitButton;
     UILabel*  _RtmpStatusLabel;
-    UIButton* _FilterButton;
-    UIButton* _CameraChangeButton;
+    
+//    UIButton* _ExitButton;
+//    UIButton* _FilterButton;
+//    UIButton* _CameraChangeButton;
+    
     XMNShareView* _FilterMenu;
     ASValueTrackingSlider* _MicSlider;
     
@@ -26,6 +43,14 @@
 @synthesize RtmpUrl;
 
 -(void) UIInit{
+    
+    _ExitButton.layer.cornerRadius = 30.0;
+    _ExitButton.clipsToBounds = YES;
+    _FilterButton.layer.cornerRadius = 30.0;
+    _FilterButton.clipsToBounds = YES;
+    _CameraChangeButton.layer.cornerRadius = 30.0;
+    _CameraChangeButton.clipsToBounds = YES;
+    
     double fScreenW = [UIScreen mainScreen].bounds.size.width;
     double fScreenH = [UIScreen mainScreen].bounds.size.height;
     if (self.IsHorizontal) {
@@ -36,20 +61,6 @@
     
     _AllBackGroudView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, fScreenW, fScreenH)];
     [self.view addSubview:_AllBackGroudView];
-    
-    float fExitButtonW = 40;
-    float fExitButtonH = 20;
-    float fExitButtonX = fScreenW - fExitButtonW - 10;
-    float fExitButtonY = fScreenH - fExitButtonH - 10;
-    _ExitButton = [[UIButton alloc] initWithFrame:CGRectMake(fExitButtonX, fExitButtonY, fExitButtonW, fExitButtonH)];
-    _ExitButton.backgroundColor = [UIColor blueColor];
-    _ExitButton.layer.masksToBounds = YES;
-    _ExitButton.layer.cornerRadius  = 5;
-    [_ExitButton setTitle:@"退出" forState:UIControlStateNormal];
-    [_ExitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _ExitButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:10];
-    [_ExitButton addTarget:self action:@selector(OnExitClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_ExitButton];
     
     float fRtmpStatusLabelW = 120;
     float fRtmpStatusLabelH = 20;
@@ -64,40 +75,10 @@
     _RtmpStatusLabel.text = @"网络状态: 未连接";
     [self.view addSubview:_RtmpStatusLabel];
     
-    float fFilterButtonW = 50;
-    float fFilterButtonH = 30;
-    float fFilterButtonX = fScreenW/2-fFilterButtonW-5;
-    float fFilterButtonY = fScreenH - fFilterButtonH - 10;
-    _FilterButton = [[UIButton alloc] initWithFrame:CGRectMake(fFilterButtonX, fFilterButtonY, fFilterButtonW, fFilterButtonH)];
-    _FilterButton.backgroundColor = [UIColor blueColor];
-    _FilterButton.layer.masksToBounds = YES;
-    _FilterButton.layer.cornerRadius  = 5;
-    [_FilterButton setTitle:@"滤镜" forState:UIControlStateNormal];
-    [_FilterButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _FilterButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
-    [_FilterButton addTarget:self action:@selector(OnFilterClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_FilterButton];
-    
-    float fCameraChangeButtonW = fFilterButtonW;
-    float fCameraChangeButtonH = fFilterButtonH;
-    float fCameraChangeButtonX = fScreenW/2+5;
-    float fCameraChangeButtonY = fFilterButtonY;
-    
-    _CameraChangeButton = [[UIButton alloc] initWithFrame:CGRectMake(fCameraChangeButtonX, fCameraChangeButtonY, fCameraChangeButtonW, fCameraChangeButtonH)];
-    _CameraChangeButton.backgroundColor = [UIColor blueColor];
-    _CameraChangeButton.layer.masksToBounds = YES;
-    _CameraChangeButton.layer.cornerRadius  = 5;
-    [_CameraChangeButton setTitle:@"后置镜头" forState:UIControlStateNormal];
-    [_CameraChangeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _CameraChangeButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:11];
-    [_CameraChangeButton addTarget:self action:@selector(OnCameraChangeClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_CameraChangeButton];
-    
     float fMicSliderX = 20;
-    float fMicSliderY = fCameraChangeButtonY - fCameraChangeButtonH - 10;
     float fMicSliderW = fScreenW - fMicSliderX*2;
     float fMicSliderH = 30;
-    _MicSlider = [[ASValueTrackingSlider alloc] initWithFrame:CGRectMake(fMicSliderX, fMicSliderY, fMicSliderW, fMicSliderH)];
+    _MicSlider = [[ASValueTrackingSlider alloc] initWithFrame:CGRectMake(fMicSliderX, fScreenH - 130, fMicSliderW, fMicSliderH)];
     _MicSlider.maximumValue = 10.0;
     _MicSlider.popUpViewCornerRadius = 4;
     [_MicSlider setMaxFractionDigitsDisplayed:0];
@@ -145,7 +126,8 @@
     });
 }
 
--(void) OnCameraChangeClicked:(id)sender{
+- (IBAction)OnCameraChangeClicked:(id)sender {
+    
     _bCameraFrontFlag = !_bCameraFrontFlag;
     [[LiveVideoCoreSDK sharedinstance] setCameraFront:_bCameraFrontFlag];
     if (_bCameraFrontFlag) {
@@ -155,7 +137,7 @@
     }
 }
 
--(void) OnFilterClicked:(id)sender{
+-(IBAction)OnFilterClicked:(id)sender{
     NSArray *shareAry = @[@{kXMNShareImage:@"original_Image",
                             kXMNShareHighlightImage:@"original_Image",
                             kXMNShareTitle:@"原始"},
@@ -168,18 +150,19 @@
                           @{kXMNShareImage:@"black_Image",
                             kXMNShareHighlightImage:@"fugu_Image",
                             kXMNShareTitle:@"黑白"},
-                          @{kXMNShareImage:@"beauty_Image",
-                            kXMNShareHighlightImage:@"beauty_Image",
-                            kXMNShareTitle:@"美颜0"},
-                          @{kXMNShareImage:@"beauty_Image",
-                            kXMNShareHighlightImage:@"beauty_Image",
-                            kXMNShareTitle:@"美颜1"},
-                          @{kXMNShareImage:@"beauty_Image",
-                            kXMNShareHighlightImage:@"beauty_Image",
-                            kXMNShareTitle:@"美颜2"},
-                          @{kXMNShareImage:@"beauty_Image",
-                            kXMNShareHighlightImage:@"beauty_Image",
-                            kXMNShareTitle:@"美颜3"}];
+//                          @{kXMNShareImage:@"beauty_Image",
+//                            kXMNShareHighlightImage:@"beauty_Image",
+//                            kXMNShareTitle:@"美颜0"},
+//                          @{kXMNShareImage:@"beauty_Image",
+//                            kXMNShareHighlightImage:@"beauty_Image",
+//                            kXMNShareTitle:@"美颜1"},
+//                          @{kXMNShareImage:@"beauty_Image",
+//                            kXMNShareHighlightImage:@"beauty_Image",
+//                            kXMNShareTitle:@"美颜2"},
+//                          @{kXMNShareImage:@"beauty_Image",
+//                            kXMNShareHighlightImage:@"beauty_Image",
+//                            kXMNShareTitle:@"美颜3"}
+                          ];
     //自定义头部
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 36)];
     headerView.backgroundColor = [UIColor clearColor];
@@ -214,22 +197,22 @@
                 NSLog(@"设置黑白滤镜...");
                 [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_BLACK];
                 break;
-            case 4:
-                NSLog(@"设置美颜0滤镜...");
-                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE0];
-                break;
-            case 5:
-                NSLog(@"设置美颜1滤镜...");
-                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE1];
-                break;
-            case 6:
-                NSLog(@"设置美颜2滤镜...");
-                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE2];
-                break;
-            case 7:
-                NSLog(@"设置美颜3滤镜...");
-                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE3];
-                break;
+//            case 4:
+//                NSLog(@"设置美颜0滤镜...");
+//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE0];
+//                break;
+//            case 5:
+//                NSLog(@"设置美颜1滤镜...");
+//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE1];
+//                break;
+//            case 6:
+//                NSLog(@"设置美颜2滤镜...");
+//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE2];
+//                break;
+//            case 7:
+//                NSLog(@"设置美颜3滤镜...");
+//                [[LiveVideoCoreSDK sharedinstance] setFilter:LIVE_FILTER_DEFINE3];
+//                break;
             default:
                 break;
         }
@@ -241,7 +224,7 @@
     [_FilterMenu showUseAnimated:YES];
 }
 
--(void) OnExitClicked:(id)sender{
+-(IBAction) OnExitClicked:(id)sender{
     NSLog(@"Rtmp[%@] is ended", self.RtmpUrl);
     [[LiveVideoCoreSDK sharedinstance] disconnect];
     [[LiveVideoCoreSDK sharedinstance] LiveRelease];

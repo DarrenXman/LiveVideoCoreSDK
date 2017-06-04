@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
-        <!--Fice Time View Controller-->
+        <!--Live Show View Controller-->
         <scene sceneID="N0B-uC-bpz">
             <objects>
-                <viewController storyboardIdentifier="FiceTimeViewController" id="mgN-aU-prk" customClass="FiceTimeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LiveShowViewController" id="mgN-aU-prk" customClass="LiveShowViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Sw-PD-S7P"/>
                         <viewControllerLayoutGuide type="bottom" id="bYK-Nl-pVc"/>
@@ -149,7 +149,7 @@
                                 </constraints>
                                 <state key="normal" image="11"/>
                                 <connections>
-                                    <action selector="cancelButton:" destination="mgN-aU-prk" eventType="touchUpInside" id="Ze0-Bs-mIF"/>
+                                    <action selector="OnExitClicked:" destination="mgN-aU-prk" eventType="touchUpInside" id="Yc5-7L-gka"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4K-oq-9V3">
@@ -159,9 +159,9 @@
                                     <constraint firstAttribute="height" constant="60" id="gDH-Vs-lqM"/>
                                     <constraint firstAttribute="width" constant="60" id="grc-4u-Gjn"/>
                                 </constraints>
-                                <state key="normal" image="22"/>
+                                <state key="normal" image="fliter"/>
                                 <connections>
-                                    <action selector="voiceButton:" destination="mgN-aU-prk" eventType="touchUpInside" id="Q7a-Av-mSi"/>
+                                    <action selector="OnFilterClicked:" destination="mgN-aU-prk" eventType="touchUpInside" id="5a8-I6-145"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trr-Fv-SHb">
@@ -173,7 +173,7 @@
                                 </constraints>
                                 <state key="normal" image="00"/>
                                 <connections>
-                                    <action selector="switchButton:" destination="mgN-aU-prk" eventType="touchUpInside" id="rvc-G2-Bbs"/>
+                                    <action selector="OnCameraChangeClicked:" destination="mgN-aU-prk" eventType="touchUpInside" id="X8w-bO-528"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -193,11 +193,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="callButton" destination="12X-72-aNE" id="Elk-rW-S0D"/>
-                        <outlet property="camaraButton" destination="Trr-Fv-SHb" id="pBS-hD-ZE6"/>
-                        <outlet property="faceTimeLabel" destination="mwV-Fy-JI9" id="sPF-a7-Q8c"/>
-                        <outlet property="nameLabel" destination="TnY-ZV-io8" id="pyL-zR-DOA"/>
-                        <outlet property="voiceButton" destination="K4K-oq-9V3" id="yme-qW-HJN"/>
+                        <outlet property="CameraChangeButton" destination="Trr-Fv-SHb" id="Aeu-2J-eh9"/>
+                        <outlet property="ExitButton" destination="12X-72-aNE" id="ORi-Tn-tr8"/>
+                        <outlet property="FilterButton" destination="K4K-oq-9V3" id="QCt-bH-GtZ"/>
+                        <outlet property="faceTimeLabel" destination="mwV-Fy-JI9" id="pCO-VY-OIe"/>
+                        <outlet property="nameLabel" destination="TnY-ZV-io8" id="ll9-b4-Bju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gW-7e-L8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,6 +208,6 @@
     <resources>
         <image name="00" width="289" height="285"/>
         <image name="11" width="145" height="145"/>
-        <image name="22" width="145" height="145"/>
+        <image name="fliter" width="76" height="75"/>
     </resources>
 </document>
