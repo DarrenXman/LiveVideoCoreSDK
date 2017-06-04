@@ -10,6 +10,16 @@
 		040152121EE3919C0050BFD7 /* FaceCamViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401520D1EE3919C0050BFD7 /* FaceCamViewer.m */; };
 		040152131EE3919C0050BFD7 /* FaceTimeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401520F1EE3919C0050BFD7 /* FaceTimeListViewController.m */; };
 		040152141EE3919C0050BFD7 /* FiceTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152111EE3919C0050BFD7 /* FiceTimeViewController.m */; };
+		0401522A1EE3E8940050BFD7 /* TYLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152171EE3E8940050BFD7 /* TYLoadingView.m */; };
+		0401522B1EE3E8940050BFD7 /* TYVideoBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401521A1EE3E8940050BFD7 /* TYVideoBottomView.m */; };
+		0401522C1EE3E8940050BFD7 /* TYVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401521C1EE3E8940050BFD7 /* TYVideoControlView.m */; };
+		0401522D1EE3E8940050BFD7 /* TYVideoErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401521E1EE3E8940050BFD7 /* TYVideoErrorView.m */; };
+		0401522E1EE3E8940050BFD7 /* TYVideoPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0401521F1EE3E8940050BFD7 /* TYVideoPlayer.bundle */; };
+		0401522F1EE3E8940050BFD7 /* TYVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152211EE3E8940050BFD7 /* TYVideoPlayer.m */; };
+		040152301EE3E8940050BFD7 /* TYVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152231EE3E8940050BFD7 /* TYVideoPlayerController.m */; };
+		040152311EE3E8940050BFD7 /* TYVideoPlayerTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152251EE3E8940050BFD7 /* TYVideoPlayerTrack.m */; };
+		040152321EE3E8940050BFD7 /* TYVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152271EE3E8940050BFD7 /* TYVideoPlayerView.m */; };
+		040152331EE3E8940050BFD7 /* TYVideoTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040152291EE3E8940050BFD7 /* TYVideoTitleView.m */; };
 		B73752F01CAA5630007FBCA0 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752ED1CAA5630007FBCA0 /* ASValuePopUpView.m */; };
 		B73752F11CAA5630007FBCA0 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752EF1CAA5630007FBCA0 /* ASValueTrackingSlider.m */; };
 		B73752F51CAA8688007FBCA0 /* ZJSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B73752F41CAA8688007FBCA0 /* ZJSwitch.m */; };
@@ -59,6 +69,26 @@
 		0401520F1EE3919C0050BFD7 /* FaceTimeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceTimeListViewController.m; sourceTree = "<group>"; };
 		040152101EE3919C0050BFD7 /* FiceTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiceTimeViewController.h; sourceTree = "<group>"; };
 		040152111EE3919C0050BFD7 /* FiceTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiceTimeViewController.m; sourceTree = "<group>"; };
+		040152161EE3E8940050BFD7 /* TYLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLoadingView.h; sourceTree = "<group>"; };
+		040152171EE3E8940050BFD7 /* TYLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLoadingView.m; sourceTree = "<group>"; };
+		040152181EE3E8940050BFD7 /* TYPlayerLayerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPlayerLayerProtocol.h; sourceTree = "<group>"; };
+		040152191EE3E8940050BFD7 /* TYVideoBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoBottomView.h; sourceTree = "<group>"; };
+		0401521A1EE3E8940050BFD7 /* TYVideoBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoBottomView.m; sourceTree = "<group>"; };
+		0401521B1EE3E8940050BFD7 /* TYVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoControlView.h; sourceTree = "<group>"; };
+		0401521C1EE3E8940050BFD7 /* TYVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoControlView.m; sourceTree = "<group>"; };
+		0401521D1EE3E8940050BFD7 /* TYVideoErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoErrorView.h; sourceTree = "<group>"; };
+		0401521E1EE3E8940050BFD7 /* TYVideoErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoErrorView.m; sourceTree = "<group>"; };
+		0401521F1EE3E8940050BFD7 /* TYVideoPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TYVideoPlayer.bundle; sourceTree = "<group>"; };
+		040152201EE3E8940050BFD7 /* TYVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoPlayer.h; sourceTree = "<group>"; };
+		040152211EE3E8940050BFD7 /* TYVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoPlayer.m; sourceTree = "<group>"; };
+		040152221EE3E8940050BFD7 /* TYVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoPlayerController.h; sourceTree = "<group>"; };
+		040152231EE3E8940050BFD7 /* TYVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoPlayerController.m; sourceTree = "<group>"; };
+		040152241EE3E8940050BFD7 /* TYVideoPlayerTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoPlayerTrack.h; sourceTree = "<group>"; };
+		040152251EE3E8940050BFD7 /* TYVideoPlayerTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoPlayerTrack.m; sourceTree = "<group>"; };
+		040152261EE3E8940050BFD7 /* TYVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoPlayerView.h; sourceTree = "<group>"; };
+		040152271EE3E8940050BFD7 /* TYVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoPlayerView.m; sourceTree = "<group>"; };
+		040152281EE3E8940050BFD7 /* TYVideoTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVideoTitleView.h; sourceTree = "<group>"; };
+		040152291EE3E8940050BFD7 /* TYVideoTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVideoTitleView.m; sourceTree = "<group>"; };
 		B73752EC1CAA5630007FBCA0 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		B73752ED1CAA5630007FBCA0 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		B73752EE1CAA5630007FBCA0 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
@@ -133,6 +163,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040152151EE3E8940050BFD7 /* TYVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				040152161EE3E8940050BFD7 /* TYLoadingView.h */,
+				040152171EE3E8940050BFD7 /* TYLoadingView.m */,
+				040152181EE3E8940050BFD7 /* TYPlayerLayerProtocol.h */,
+				040152191EE3E8940050BFD7 /* TYVideoBottomView.h */,
+				0401521A1EE3E8940050BFD7 /* TYVideoBottomView.m */,
+				0401521B1EE3E8940050BFD7 /* TYVideoControlView.h */,
+				0401521C1EE3E8940050BFD7 /* TYVideoControlView.m */,
+				0401521D1EE3E8940050BFD7 /* TYVideoErrorView.h */,
+				0401521E1EE3E8940050BFD7 /* TYVideoErrorView.m */,
+				0401521F1EE3E8940050BFD7 /* TYVideoPlayer.bundle */,
+				040152201EE3E8940050BFD7 /* TYVideoPlayer.h */,
+				040152211EE3E8940050BFD7 /* TYVideoPlayer.m */,
+				040152221EE3E8940050BFD7 /* TYVideoPlayerController.h */,
+				040152231EE3E8940050BFD7 /* TYVideoPlayerController.m */,
+				040152241EE3E8940050BFD7 /* TYVideoPlayerTrack.h */,
+				040152251EE3E8940050BFD7 /* TYVideoPlayerTrack.m */,
+				040152261EE3E8940050BFD7 /* TYVideoPlayerView.h */,
+				040152271EE3E8940050BFD7 /* TYVideoPlayerView.m */,
+				040152281EE3E8940050BFD7 /* TYVideoTitleView.h */,
+				040152291EE3E8940050BFD7 /* TYVideoTitleView.m */,
+			);
+			path = TYVideoPlayer;
+			sourceTree = "<group>";
+		};
 		B73752EB1CAA5630007FBCA0 /* ASValueTrackingSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +234,7 @@
 		B78280111C86C95E0057E507 /* LiveVideoCoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				040152151EE3E8940050BFD7 /* TYVideoPlayer */,
 				B73752F21CAA8675007FBCA0 /* ZJSwitch */,
 				B73752EB1CAA5630007FBCA0 /* ASValueTrackingSlider */,
 				B78280651C86E7F90057E507 /* XMNShareMenu */,
@@ -360,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B78280221C86C95E0057E507 /* LaunchScreen.storyboard in Resources */,
+				0401522E1EE3E8940050BFD7 /* TYVideoPlayer.bundle in Resources */,
 				B782801F1C86C95E0057E507 /* Assets.xcassets in Resources */,
 				B782801D1C86C95E0057E507 /* Main.storyboard in Resources */,
 			);
@@ -386,15 +445,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0401522A1EE3E8940050BFD7 /* TYLoadingView.m in Sources */,
 				B782806C1C86E7F90057E507 /* XMNShareView.m in Sources */,
+				040152321EE3E8940050BFD7 /* TYVideoPlayerView.m in Sources */,
+				040152311EE3E8940050BFD7 /* TYVideoPlayerTrack.m in Sources */,
 				040152121EE3919C0050BFD7 /* FaceCamViewer.m in Sources */,
 				B73752F11CAA5630007FBCA0 /* ASValueTrackingSlider.m in Sources */,
 				040152141EE3919C0050BFD7 /* FiceTimeViewController.m in Sources */,
 				B782801A1C86C95E0057E507 /* ViewController.m in Sources */,
+				0401522D1EE3E8940050BFD7 /* TYVideoErrorView.m in Sources */,
+				040152301EE3E8940050BFD7 /* TYVideoPlayerController.m in Sources */,
 				B78280171C86C95E0057E507 /* AppDelegate.m in Sources */,
 				B782806B1C86E7F90057E507 /* XMNShareScrollView.m in Sources */,
+				0401522C1EE3E8940050BFD7 /* TYVideoControlView.m in Sources */,
+				040152331EE3E8940050BFD7 /* TYVideoTitleView.m in Sources */,
 				B73752F51CAA8688007FBCA0 /* ZJSwitch.m in Sources */,
+				0401522F1EE3E8940050BFD7 /* TYVideoPlayer.m in Sources */,
 				040152131EE3919C0050BFD7 /* FaceTimeListViewController.m in Sources */,
+				0401522B1EE3E8940050BFD7 /* TYVideoBottomView.m in Sources */,
 				B73752F01CAA5630007FBCA0 /* ASValuePopUpView.m in Sources */,
 				B78280141C86C95E0057E507 /* main.m in Sources */,
 				B78280471C86CA160057E507 /* LiveShowViewController.m in Sources */,

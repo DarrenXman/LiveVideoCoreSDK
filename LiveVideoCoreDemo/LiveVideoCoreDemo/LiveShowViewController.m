@@ -9,7 +9,11 @@
 #import "LiveShowViewController.h"
 #import "XMNShareMenu.h"
 
-@interface LiveShowViewController ()<UIGestureRecognizerDelegate>
+#import "TYVideoPlayerController.h"
+#import <MediaPlayer/MediaPlayer.h>
+
+
+@interface LiveShowViewController ()<UIGestureRecognizerDelegate,TYVideoPlayerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
@@ -22,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *FilterButton;
 
 @property (weak, nonatomic) IBOutlet UIView *videoView;
+
+@property (weak, nonatomic) TYVideoPlayerController *playerController;
 
 @end
 
@@ -110,8 +116,36 @@
     _videoFrame = _videoView.frame;
     _videoView.userInteractionEnabled = YES;
     
+    
+    [self addVideoPlayerController];
+    
     [self.view addSubview:_videoView];
 }
+
+- (void)addVideoPlayerController
+{
+    TYVideoPlayerController *playerController = [[TYVideoPlayerController alloc]init];
+    [playerController.view setFrame:CGRectMake(0, 0, _videoFrame.size.width, _videoFrame.size.height)];
+    //playerController.shouldAutoplayVideo = NO;
+    playerController.delegate = self;
+    [self addChildViewController:playerController];
+    _videoView.backgroundColor = [UIColor redColor];
+    playerController.view.backgroundColor = [UIColor blueColor];
+    [_videoView addSubview:playerController.view];
+    _playerController = playerController;
+    
+    
+//    直播
+    NSURL *streamURL = [NSURL URLWithString:@"http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"];
+
+//    点播
+//    NSURL *streamURL = [NSURL URLWithString:@"http://baobab.wdjcdn.com/1442142801331138639111.mp4"];
+    
+    [_playerController loadVideoWithStreamURL:streamURL];
+
+    
+}
+
 
 -(void) videoViewTap:(UITapGestureRecognizer *)tap {
     
@@ -129,10 +163,6 @@
             _CameraChangeButton.alpha = 0.0;
             _FilterButton.alpha = 0.0;
             _ExitButton.alpha = 0.0;
-            
-            
-            
-            
             
         } completion:^(BOOL finished) {
             
@@ -156,7 +186,6 @@
             _CameraChangeButton.alpha = 1.0;
             _FilterButton.alpha = 1.0;
             _ExitButton.alpha = 1.0;
-            
             
         } completion:^(BOOL finished) {
             
