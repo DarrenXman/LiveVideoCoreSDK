@@ -115,7 +115,7 @@
     _videoView.tag = 100;
     _videoFrame = _videoView.frame;
     _videoView.userInteractionEnabled = YES;
-    
+    _videoView.backgroundColor = [UIColor clearColor];
     
     [self addVideoPlayerController];
     
@@ -129,11 +129,8 @@
     //playerController.shouldAutoplayVideo = NO;
     playerController.delegate = self;
     [self addChildViewController:playerController];
-    _videoView.backgroundColor = [UIColor redColor];
-    playerController.view.backgroundColor = [UIColor blueColor];
     [_videoView addSubview:playerController.view];
     _playerController = playerController;
-    
     
 //    直播
     NSURL *streamURL = [NSURL URLWithString:@"http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"];
@@ -143,7 +140,6 @@
     
     [_playerController loadVideoWithStreamURL:streamURL];
 
-    
 }
 
 
@@ -155,6 +151,9 @@
         [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
            
             [_videoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+            
+            [_playerController.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+
             
             //隐藏屏幕上的所有控件
             _nameLabel.alpha = 0.0;
@@ -171,13 +170,17 @@
         
     }
     else if (tap.view.tag == 111) {
-        
+       
+        [_videoView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+
+        [_playerController.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+
         tap.view.tag = 100;
         
         [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             [_videoView setFrame:_videoFrame];
-            
+            [_playerController.view setFrame:CGRectMake(0, 0, _videoFrame.size.width, _videoFrame.size.height)];
             //显示屏幕上的所有控件
             
             _nameLabel.alpha = 1.0;

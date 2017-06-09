@@ -56,7 +56,7 @@
 {
     _shouldAutoplayVideo = YES;
     _failedToAutoRetryCount = 2;
-//    _videoGravity = AVLayerVideoGravityResizeAspect;
+    _videoGravity = AVLayerVideoGravityResizeAspectFill;
 }
 
 #pragma mark - life cycle
@@ -114,7 +114,7 @@
 {
     TYVideoPlayerView *playerView = [[TYVideoPlayerView alloc]init];
     playerView.backgroundColor = [UIColor blackColor];
-//    playerView.playerLayer.videoGravity = _videoGravity;
+    playerView.playerLayer.videoGravity = _videoGravity;
     [self.view addSubview:playerView];
     _playerView = playerView;
 }
@@ -151,7 +151,7 @@
 
 - (void)setVideoGravity:(NSString *)videoGravity
 {
-//    _videoGravity = videoGravity;
+    _videoGravity = videoGravity;
     
     if (_playerView) {
         _playerView.playerLayer.videoGravity = videoGravity;

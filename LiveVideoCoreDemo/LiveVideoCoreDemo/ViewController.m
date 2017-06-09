@@ -93,6 +93,7 @@
     _RtmpUrlTextField.text = @"rtmp://ossrs.net/live/123456";
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
